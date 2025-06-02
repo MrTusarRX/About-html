@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML: A Complete Beginner's Guide</title>
+  <style>
+    body {
+      font-family: 'Georgia', serif;
+      background-color: #fff;
+      color: #2d2d2d;
+      margin: 0;
+      padding: 40px;
+      line-height: 1.8;
+      font-size: 16px;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      box-sizing: border-box;
+    }
+    h1, h2, h3 {
+      color: #1a3c6d;
+      font-family: 'Arial', sans-serif;
+      page-break-after: avoid;
+    }
+    h1 {
+      text-align: center;
+      font-size: 36px;
+      margin-bottom: 40px;
+      border-bottom: 2px solid #1a3c6d;
+      padding-bottom: 10px;
+    }
+    h2 {
+      font-size: 28px;
+      margin-top: 50px;
+      margin-bottom: 20px;
+      border-left: 5px solid #1a3c6d;
+      padding-left: 10px;
+    }
+    h3 {
+      font-size: 22px;
+      margin-top: 30px;
+      margin-bottom: 15px;
+    }
+    p {
+      margin: 10px 0;
+      text-align: justify;
+    }
+    code {
+      background-color: #f4f4f4;
+      padding: 3px 6px;
+      border-radius: 3px;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 14px;
+      display: inline-block;
+      white-space: pre-wrap;
+      min-height: 1.2em;
+      border: 1px solid #ddd;
+      box-sizing: border-box;
+    }
+    pre {
+      background-color: #f4f4f4;
+      padding: 15px;
+      border-radius: 5px;
+      overflow-x: auto;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 14px;
+      border-left: 4px solid #1a3c6d;
+      margin: 15px 0;
+      white-space: pre-wrap;
+      min-height: 1.2em;
+      border: 1px solid #ddd;
+      box-sizing: border-box;
+      max-width: 100%;
+      page-break-inside: avoid;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      table-layout: fixed;
+      page-break-inside: avoid;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 12px;
+      text-align: left;
+      word-wrap: break-word;
+      box-sizing: border-box;
+    }
+    th {
+      background-color: #e0e0e0;
+      font-weight: bold;
+    }
+    ul, ol {
+      margin: 15px 0;
+      padding-left: 30px;
+    }
+    li {
+      margin-bottom: 10px;
+    }
+    a {
+      color: #1a3c6d;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    #cover {
+      text-align: center;
+      padding: 50px 0;
+      background-color: #f9f9f9;
+      border-bottom: 2px solid #1a3c6d;
+      margin-bottom: 40px;
+      page-break-after: always;
+    }
+    #toc {
+      background-color: #f9f9f9;
+      padding: 20px;
+      border-radius: 5px;
+      margin-bottom: 40px;
+      page-break-inside: avoid;
+    }
+    #toc h2 {
+      margin-top: 0;
+    }
+    #footer {
+      text-align: center;
+      font-size: 14px;
+      color: #666;
+      margin-top: 50px;
+      padding-top: 20px;
+      border-top: 1px solid #ccc;
+      position: relative;
+    }
+    #lang-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 10px 20px;
+      background-color: #1a3c6d;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      z-index: 1000;
+    }
+    #lang-toggle:hover {
+      background-color: #15335a;
+    }
+    #lang-toggle:focus {
+      outline: 2px solid #15335a;
+    }
+    @media print {
+      body {
+        padding: 20px;
+        font-size: 14px;
+        max-width: none;
+      }
+      #footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        left: 0;
+        border-top: none;
+      }
+      a {
+        text-decoration: none;
+        color: #000;
+      }
+      #lang-toggle {
+        display: none;
+      }
+      pre, code {
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        max-width: 100%;
+      }
+      table {
+        width: 100%;
+        max-width: 100%;
+      }
+      th, td {
+        font-size: 12px;
+        padding: 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <button id="lang-toggle" onclick="toggleLanguage()" aria-label="Toggle Language">Switch to Bengali</button>
+
+  <div id="cover">
+    <h1 data-en="HTML: A Complete Beginner's Guide" data-bn="এইচটিএমএল: একটি সম্পূর্ণ নতুনদের গাইড">HTML: A Complete Beginner's Guide</h1>
+    <p data-en="Master the Basics of Web Development" data-bn="ওয়েব ডেভেলপমেন্টের মূল বিষয় আয়ত্ত করুন">Master the Basics of Web Development</p>
+    <p data-en="Published on May 31, 2025" data-bn="প্রকাশিত: ৩১ মে, ২০২৫">Published on May 31, 2025</p>
+  </div>
+
+  <div id="toc">
+    <h2 data-en="Table of Contents" data-bn="সূচিপত্র">Table of Contents</h2>
+    <ul>
+      <li><a href="#chapter1" data-en="1. What is HTML?" data-bn="১. এইচটিএমএল কী?">1. What is HTML?</a></li>
+      <li><a href="#chapter2" data-en="2. HTML Structure and Core Elements" data-bn="২. এইচটিএমএল গঠন এবং মূল উপাদান">2. HTML Structure and Core Elements</a></li>
+      <li><a href="#chapter3" data-en="3. Attributes and Their Uses" data-bn="৩. গুণাবলী এবং তাদের ব্যবহার">3. Attributes and Their Uses</a></li>
+      <li><a href="#chapter4" data-en="4. Forms and Interactivity" data-bn="৪. ফর্ম এবং ইন্টারেক্টিভিটি">4. Forms and Interactivity</a></li>
+      <li><a href="#chapter5" data-en="5. Semantic HTML and Accessibility" data-bn="৫. সিমান্টিক এইচটিএমএল এবং অ্যাক্সেসযোগ্যতা">5. Semantic HTML and Accessibility</a></li>
+      <li><a href="#chapter6" data-en="6. Media and Metadata" data-bn="৬. মিডিয়া এবং মেটাডেটা">6. Media and Metadata</a></li>
+      <li><a href="#chapter7" data-en="7. Advanced Tables and Attributes" data-bn="৭. উন্নত টেবিল এবং গুণাবলী">7. Advanced Tables and Attributes</a></li>
+      <li><a href="#chapter8" data-en="8. HTML5 APIs and Features" data-bn="৮. এইচটিএমএল৫ এপিআই এবং বৈশিষ্ট্য">8. HTML5 APIs and Features</a></li>
+      <li><a href="#chapter9" data-en="9. Inline Styling and Deprecated Tags" data-bn="৯. ইনলাইন স্টাইলিং এবং অপ্রচলিত ট্যাগ">9. Inline Styling and Deprecated Tags</a></li>
+      <li><a href="#chapter10" data-en="10. Best Practices and Resources" data-bn="১০. সর্বোত্তম অনুশীলন এবং সম্পদ">10. Best Practices and Resources</a></li>
+    </ul>
+  </div>
+
+  <h2 id="chapter1" data-en="1. What is HTML?" data-bn="১. এইচটিএমএল কী?">1. What is HTML?</h2>
+  <p data-en="HTML (HyperText Markup Language) is the foundation of web pages. It uses tags to define the structure and content, such as headings, paragraphs, and links, on the internet." data-bn="এইচটিএমএল (হাইপারটেক্সট মার্কআপ ল্যাঙ্গুয়েজ) ওয়েব পেজের ভিত্তি। এটি ইন্টারনেটে শিরোনাম, প্যারাগ্রাফ এবং লিঙ্কের মতো গঠন এবং বিষয়বস্তু সংজ্ঞায়িত করতে ট্যাগ ব্যবহার করে।">HTML (HyperText Markup Language) is the foundation of web pages. It uses tags to define the structure and content, such as headings, paragraphs, and links, on the internet.</p>
+  <p data-en="Developed by Tim Berners-Lee in 1989, HTML has evolved over time. HTML5, released in 2014, introduced features like multimedia support, semantic elements, and new APIs." data-bn="১৯৮৯ সালে টিম বার্নার্স-লি দ্বারা বিকশিত, এইচটিএমএল সময়ের সাথে সাথে বিবর্তিত হয়েছে। এইচটিএমএল৫, ২০১৪ সালে প্রকাশিত, মাল্টিমিডিয়া সমর্থন, সিমান্টিক উপাদান এবং নতুন এপিআই প্রবর্তন করেছে।">Developed by Tim Berners-Lee in 1989, HTML has evolved over time. HTML5, released in 2014, introduced features like multimedia support, semantic elements, and new APIs.</p>
+
+  <h2 id="chapter2" data-en="2. HTML Structure and Core Elements" data-bn="২. এইচটিএমএল গঠন এবং মূল উপাদান">2. HTML Structure and Core Elements</h2>
+  <h3 data-en="2.1 Basic Structure" data-bn="২.১ মৌলিক গঠন">2.1 Basic Structure</h3>
+  <p data-en="Every HTML page follows this structure:" data-bn="প্রতিটি এইচটিএমএল পৃষ্ঠা এই গঠন অনুসরণ করে:">Every HTML page follows this structure:</p>
+  <pre id="basic-structure">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;My Page&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Hello, World!&lt;/h1&gt;
+  &lt;p&gt;This is my first webpage.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+  <ul>
+    <li><span class="translatable" data-en="&lt;!DOCTYPE html&gt;: Declares the document as HTML5." data-bn="&lt;!DOCTYPE html&gt;: ডকুমেন্টটিকে এইচটিএমএল৫ হিসেবে ঘোষণা করে।">&lt;!DOCTYPE html&gt;: Declares the document as HTML5.</span> <code>&lt;!DOCTYPE html&gt;</code></li>
+    <li><span class="translatable" data-en="&lt;html&gt;: The root element of the page." data-bn="&lt;html&gt;: পৃষ্ঠার মূল উপাদান।">&lt;html&gt;: The root element of the page.</span> <code>&lt;html&gt;</code></li>
+    <li><span class="translatable" data-en="&lt;head&gt;: Contains metadata and the title." data-bn="&lt;head&gt;: মেটাডেটা এবং শিরোনাম ধারণ করে।">&lt;head&gt;: Contains metadata and the title.</span> <code>&lt;head&gt;</code></li>
+    <li><span class="translatable" data-en="&lt;body&gt;: Holds the visible content." data-bn="&lt;body&gt;: দৃশ্যমান বিষয়বস্তু ধারণ করে।">&lt;body&gt;: Holds the visible content.</span> <code>&lt;body&gt;</code></li>
+  </ul>
+  <h3 data-en="2.2 Core Elements" data-bn="২.২ মূল উপাদান">2.2 Core Elements</h3>
+  <table id="core-elements-table">
+    <tr>
+      <th data-en="Tag" data-bn="ট্যাগ">Tag</th>
+      <th data-en="Purpose" data-bn="উদ্দেশ্য">Purpose</th>
+    </tr>
+    <tr>
+      <td><code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code></td>
+      <td class="translatable" data-en="Headings of different levels" data-bn="বিভিন্ন স্তরের শিরোনাম">Headings of different levels</td>
+    </tr>
+    <tr>
+      <td><code>&lt;p&gt;</code></td>
+      <td class="translatable" data-en="Paragraphs of text" data-bn="টেক্সটের প্যারাগ্রাফ">Paragraphs of text</td>
+    </tr>
+    <tr>
+      <td><code>&lt;a&gt;</code></td>
+      <td class="translatable" data-en="Links to other pages" data-bn="অন্য পৃষ্ঠার লিঙ্ক">Links to other pages</td>
+    </tr>
+    <tr>
+      <td><code>&lt;img&gt;</code></td>
+      <td class="translatable" data-en="Embeds images" data-bn="ছবি এম্বেড করে">Embeds images</td>
+    </tr>
+    <tr>
+      <td><code>&lt;ul&gt;</code>, <code>&lt;ol&gt;</code>, <code>&lt;li&gt;</code></td>
+      <td class="translatable" data-en="Lists and list items" data-bn="তালিকা এবং তালিকা আইটেম">Lists and list items</td>
+    </tr>
+  </table>
+  <p data-en="Example of using elements together:" data-bn="উপাদানগুলি একসাথে ব্যবহারের উদাহরণ:">Example of using elements together:</p>
+  <pre id="elements-example">&lt;h1&gt;My Website&lt;/h1&gt;
+&lt;p&gt;Welcome! Visit my &lt;a href="https://example.com"&gt;blog&lt;/a&gt;.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Item 1&lt;/li&gt;
+  &lt;li&gt;Item 2&lt;/li&gt;
+&lt;/ul&gt;</pre>
+
+  <h2 id="chapter3" data-en="3. Attributes and Their Uses" data-bn="৩. গুণাবলী এবং তাদের ব্যবহার">3. Attributes and Their Uses</h2>
+  <p data-en="Attributes add extra information to HTML elements and are written as name-value pairs in the opening tag." data-bn="গুণাবলী এইচটিএমএল উপাদানগুলিতে অতিরিক্ত তথ্য যোগ করে এবং ওপেনিং ট্যাগে নাম-মান জোড়া হিসেবে লেখা হয়।">Attributes add extra information to HTML elements and are written as name-value pairs in the opening tag.</p>
+  <table id="attributes-table">
+    <tr>
+      <th data-en="Attribute" data-bn="গুণাবলী">Attribute</th>
+      <th data-en="Purpose" data-bn="উদ্দেশ্য">Purpose</th>
+    </tr>
+    <tr>
+      <td><code>id</code></td>
+      <td class="translatable" data-en="Unique identifier for an element" data-bn="একটি উপাদানের জন্য অনন্য শনাক্তকারী">Unique identifier for an element</td>
+    </tr>
+    <tr>
+      <td><code>class</code></td>
+      <td class="translatable" data-en="Groups elements for styling" data-bn="স্টাইলিংয়ের জন্য উপাদান গ্রুপ করে">Groups elements for styling</td>
+    </tr>
+    <tr>
+      <td><code>href</code></td>
+      <td class="translatable" data-en="URL for links in &lt;code&gt;&lt;a&gt;&lt;/code&gt;" data-bn="&lt;code&gt;&lt;a&gt;&lt;/code&gt; এ লিঙ্কের জন্য ইউআরএল">URL for links in <code>&lt;a&gt;</code></td>
+    </tr>
+    <tr>
+      <td><code>src</code></td>
+      <td class="translatable" data-en="Source file for images or media" data-bn="ছবি বা মিডিয়ার জন্য উৎস ফাইল">Source file for images or media</td>
+    </tr>
+    <tr>
+      <td><code>alt</code></td>
+      <td class="translatable" data-en="Alternative text for images" data-bn="ছবির জন্য বিকল্প টেক্সট">Alternative text for images</td>
+    </tr>
+  </table>
+  <p data-en="Example of attributes in action:" data-bn="গুণাবলী কাজে উদাহরণ:">Example of attributes in action:</p>
+  <pre id="attributes-example">&lt;a href="https://example.com" target="_blank"&gt;Visit Example&lt;/a&gt;
+&lt;img src="photo.jpg" alt="A scenic view" width="200"&gt;
+&lt;p id="intro" class="highlight"&gt;Welcome to my page!&lt;/p&gt;</pre>
+
+  <h2 id="chapter4" data-en="4. Forms and Interactivity" data-bn="৪. ফর্ম এবং ইন্টারেক্টিভিটি">4. Forms and Interactivity</h2>
+  <p data-en="Forms allow users to input data, like text or selections, which can be sent to a server." data-bn="ফর্ম ব্যবহারকারীদের টেক্সট বা নির্বাচনের মতো ডেটা ইনপুট করতে দেয়, যা একটি সার্ভারে পাঠানো যায়।">Forms allow users to input data, like text or selections, which can be sent to a server.</p>
+  <pre id="form-example">&lt;form action="/submit" method="post"&gt;
+  &lt;label for="name"&gt;Name:&lt;/label&gt;
+  &lt;input type="text" id="name" name="name" required&gt;
+  &lt;label for="email"&gt;Email:&lt;/label&gt;
+  &lt;input type="email" id="email" name="email" required&gt;
+  &lt;button type="submit"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;</pre>
+  <ul>
+    <li><span class="translatable" data-en="&lt;form&gt;: Container for form elements." data-bn="&lt;form&gt;: ফর্ম উপাদানগুলির জন্য কন্টেইনার।">&lt;form&gt;: Container for form elements.</span> <code>&lt;form&gt;</code></li>
+    <li><span class="translatable" data-en="&lt;input&gt;: Input fields for data." data-bn="&lt;input&gt;: ডেটার জন্য ইনপুট ক্ষেত্র।">&lt;input&gt;: Input fields for data.</span> <code>&lt;input&gt;</code></li>
+    <li><span class="translatable" data-en="required: Makes a field mandatory." data-bn="required: একটি ক্ষেত্রকে বাধ্যতামূলক করে।">required: Makes a field mandatory.</span> <code>required</code></li>
+  </ul>
+  <h3 data-en="4.1 More Form Elements" data-bn="৪.১ আরও ফর্ম উপাদান">4.1 More Form Elements</h3>
+  <pre id="more-form-example">&lt;form action="/contact" method="post"&gt;
+  &lt;label for="topic"&gt;Topic:&lt;/label&gt;
+  &lt;select id="topic" name="topic"&gt;
+    &lt;option value="support"&gt;Support&lt;/option&gt;
+    &lt;option value="feedback"&gt;Feedback&lt;/option&gt;
+  &lt;/select&gt;
+  &lt;label for="message"&gt;Message:&lt;/label&gt;
+  &lt;textarea id="message" name="message" rows="3"&gt;&lt;/textarea&gt;
+  &lt;button type="submit"&gt;Send&lt;/button&gt;
+&lt;/form&gt;</pre>
+
+  <h2 id="chapter5" data-en="5. Semantic HTML and Accessibility" data-bn="৫. সিমান্টিক এইচটিএমএল এবং অ্যাক্সেসযোগ্যতা">5. Semantic HTML and Accessibility</h2>
+  <p data-en="Semantic HTML uses meaningful tags to improve structure, accessibility, and SEO." data-bn="সিমান্টিক এইচটিএমএল গঠন, অ্যাক্সেসযোগ্যতা এবং এসইও উন্নত করতে অর্থপূর্ণ ট্যাগ ব্যবহার করে।">Semantic HTML uses meaningful tags to improve structure, accessibility, and SEO.</p>
+  <table id="semantic-table">
+    <tr>
+      <th data-en="Tag" data-bn="ট্যাগ">Tag</th>
+      <th data-en="Purpose" data-bn="উদ্দেশ্য">Purpose</th>
+    </tr>
+    <tr>
+      <td><code>&lt;header&gt;</code></td>
+      <td class="translatable" data-en="Introductory content or navigation" data-bn="পরিচিতিমূলক বিষয়বস্তু বা নেভিগেশন">Introductory content or navigation</td>
+    </tr>
+    <tr>
+      <td><code>&lt;main&gt;</code></td>
+      <td class="translatable" data-en="Main content of the page" data-bn="পৃষ্ঠার প্রধান বিষয়বস্তু">Main content of the page</td>
+    </tr>
+    <tr>
+      <td><code>&lt;footer&gt;</code></td>
+      <td class="translatable" data-en="Footer with copyright info" data-bn="কপিরাইট তথ্য সহ ফুটার">Footer with copyright info</td>
+    </tr>
+  </table>
+  <p data-en="Accessibility tip: Always use alt for images and aria-label for buttons." data-bn="অ্যাক্সেসযোগ্যতার টিপ: সর্বদা ছবির জন্য alt এবং বোতামের জন্য aria-label ব্যবহার করুন।">Accessibility tip: Always use alt for images and aria-label for buttons.</p>
+  <pre id="semantic-example">&lt;header&gt;
+  &lt;h1&gt;My Site&lt;/h1&gt;
+&lt;/header&gt;
+&lt;main&gt;
+  &lt;p&gt;Main content here.&lt;/p&gt;
+&lt;/main&gt;
+&lt;footer&gt;
+  &lt;p&gt;© 2025&lt;/p&gt;
+&lt;/footer&gt;</pre>
+
+  <h2 id="chapter6" data-en="6. Media and Metadata" data-bn="৬. মিডিয়া এবং মেটাডেটা">6. Media and Metadata</h2>
+  <h3 data-en="6.1 Adding Media" data-bn="৬.১ মিডিয়া যোগ করা">6.1 Adding Media</h3>
+  <p data-en="HTML5 supports images, audio, and video:" data-bn="এইচটিএমএল৫ ছবি, অডিও এবং ভিডিও সমর্থন করে:">HTML5 supports images, audio, and video:</p>
+  <pre id="media-example">&lt;img src="image.jpg" alt="A sunset" width="200"&gt;
+&lt;audio controls&gt;
+  &lt;source src="music.mp3" type="audio/mpeg"&gt;
+&lt;/audio&gt;
+&lt;video controls width="200"&gt;
+  &lt;source src="video.mp4" type="video/mp4"&gt;
+&lt;/video&gt;</pre>
+  <h3 data-en="6.2 Metadata for SEO" data-bn="৬.২ এসইওর জন্য মেটাডেটা">6.2 Metadata for SEO</h3>
+  <p data-en="Metadata helps search engines understand your page:" data-bn="মেটাডেটা সার্চ ইঞ্জিনগুলিকে আপনার পৃষ্ঠা বুঝতে সাহায্য করে:">Metadata helps search engines understand your page:</p>
+  <pre id="metadata-example">&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="description" content="Learn HTML basics"&gt;
+  &lt;meta name="keywords" content="HTML, web"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;HTML Guide&lt;/title&gt;
+&lt;/head&gt;</pre>
+
+  <h2 id="chapter7" data-en="7. Advanced Tables and Attributes" data-bn="৭. উন্নত টেবিল এবং গুণাবলী">7. Advanced Tables and Attributes</h2>
+  <p data-en="HTML tables can be enhanced with additional attributes for better structure and accessibility." data-bn="এইচটিএমএল টেবিলগুলি আরও ভাল গঠন এবং অ্যাক্সেসযোগ্যতার জন্য অতিরিক্ত গুণাবলী দিয়ে উন্নত করা যায়।">HTML tables can be enhanced with additional attributes for better structure and accessibility.</p>
+  <table id="advanced-table">
+    <tr>
+      <th data-en="Attribute" data-bn="গুণাবলী">Attribute</th>
+      <th data-en="Purpose" data-bn="উদ্দেশ্য">Purpose</th>
+    </tr>
+    <tr>
+      <td><code>colspan</code></td>
+      <td class="translatable" data-en="Spans a cell across multiple columns" data-bn="একটি সেলকে একাধিক কলাম জুড়ে বিস্তৃত করে">Spans a cell across multiple columns</td>
+    </tr>
+    <tr>
+      <td><code>rowspan</code></td>
+      <td class="translatable" data-en="Spans a cell across multiple rows" data-bn="একটি সেলকে একাধিক সারি জুড়ে বিস্তৃত করে">Spans a cell across multiple rows</td>
+    </tr>
+    <tr>
+      <td><code>scope</code></td>
+      <td class="translatable" data-en="Defines the scope of a header cell (row or col)" data-bn="একটি হেডার সেলের স্কোপ নির্ধারণ করে (সারি বা কলাম)">Defines the scope of a header cell (row or col)</td>
+    </tr>
+  </table>
+  <p data-en="Example of an advanced table:" data-bn="একটি উন্নত টেবিলের উদাহরণ:">Example of an advanced table:</p>
+  <pre id="advanced-table-example">&lt;table border="1"&gt;
+  &lt;tr&gt;
+    &lt;th scope="col"&gt;Name&lt;/th&gt;
+    &lt;th scope="col"&gt;Category&lt;/th&gt;
+    &lt;th scope="col"&gt;Details&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;John&lt;/td&gt;
+    &lt;td rowspan="2"&gt;Student&lt;/td&gt;
+    &lt;td&gt;Grade A&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Jane&lt;/td&gt;
+    &lt;td&gt;Grade B&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td colspan="3"&gt;Summary: 2 Students&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</pre>
+
+  <h2 id="chapter8" data-en="8. HTML5 APIs and Features" data-bn="৮. এইচটিএমএল৫ এপিআই এবং বৈশিষ্ট্য">8. HTML5 APIs and Features</h2>
+  <p data-en="HTML5 introduced APIs and features to enhance web interactivity and functionality." data-bn="এইচটিএমএল৫ ওয়েব ইন্টারেক্টিভিটি এবং কার্যকারিতা বাড়ানোর জন্য এপিআই এবং বৈশিষ্ট্য প্রবর্তন করেছে।">HTML5 introduced APIs and features to enhance web interactivity and functionality.</p>
+  <h3 data-en="8.1 Canvas for Graphics" data-bn="৮.১ গ্রাফিক্সের জন্য ক্যানভাস">8.1 Canvas for Graphics</h3>
+  <p data-en="The &lt;code&gt;&lt;canvas&gt;&lt;/code&gt; element allows dynamic drawing using JavaScript." data-bn="&lt;code&gt;&lt;canvas&gt;&lt;/code&gt; উপাদান জাভাস্ক্রিপ্ট ব্যবহার করে গতিশীল অঙ্কনের অনুমতি দেয়।">The <code>&lt;canvas&gt;</code> element allows dynamic drawing using JavaScript.</p>
+  <pre id="canvas-example">&lt;canvas id="myCanvas" width="200" height="100"&gt;&lt;/canvas&gt;
+&lt;script&gt;
+  const canvas = document.getElementById("myCanvas");
+  const ctx = canvas.getContext("2d");
+  ctx.fillStyle = "blue";
+  ctx.fillRect(50, 20, 100, 60);
+&lt;/script&gt;</pre>
+  <h3 data-en="8.2 Geolocation API" data-bn="৮.২ জিওলোকেশন এপিআই">8.2 Geolocation API</h3>
+  <p data-en="The Geolocation API retrieves the user's location (with permission)." data-bn="জিওলোকেশন এপিআই ব্যবহারকারীর অবস্থান পুনরুদ্ধার করে (অনুমতি সহ)।">The Geolocation API retrieves the user's location (with permission).</p>
+  <pre id="geolocation-example">&lt;button onclick="getLocation()"&gt;Get Location&lt;/button&gt;
+&lt;p id="location"&gt;&lt;/p&gt;
+&lt;script&gt;
+  function getLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+      document.getElementById("location").innerHTML = "Geolocation not supported.";
+    }
+  }
+  function showPosition(position) {
+    document.getElementById("location").innerHTML = 
+      "Latitude: " + position.coords.latitude + 
+      "&lt;br&gt;Longitude: " + position.coords.longitude;
+  }
+&lt;/script&gt;</pre>
+  <h3 data-en="8.3 Drag and Drop" data-bn="৮.৩ ড্র্যাগ এবং ড্রপ">8.3 Drag and Drop</h3>
+  <p data-en="HTML5 supports drag-and-drop functionality for interactive elements." data-bn="এইচটিএমএল৫ ইন্টারেক্টিভ উপাদানগুলির জন্য ড্র্যাগ-এন্ড-ড্রপ কার্যকারিতা সমর্থন করে।">HTML5 supports drag-and-drop functionality for interactive elements.</p>
+  <pre id="drag-drop-example">&lt;div id="drag" draggable="true" ondragstart="drag(event)"&gt;Drag me&lt;/div&gt;
+&lt;div id="drop" ondrop="drop(event)" ondragover="allowDrop(event)"&gt;Drop here&lt;/div&gt;
+&lt;script&gt;
+  function allowDrop(ev) {
+    ev.preventDefault();
+  }
+  function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+  }
+  function drop(ev) {
+    ev.preventDefault();
+    const data = ev.dataTransfer.getData("text");
+    ev.target.appendChild(document.getElementById(data));
+  }
+&lt;/script&gt;</pre>
+
+  <h2 id="chapter9" data-en="9. Inline Styling and Deprecated Tags" data-bn="৯. ইনলাইন স্টাইলিং এবং অপ্রচলিত ট্যাগ">9. Inline Styling and Deprecated Tags</h2>
+  <h3 data-en="9.1 Inline Styling" data-bn="৯.১ ইনলাইন স্টাইলিং">9.1 Inline Styling</h3>
+  <p data-en="The style attribute allows inline CSS for quick styling, though external CSS is preferred for maintainability." data-bn="স্টাইল গুণাবলী দ্রুত স্টাইলিংয়ের জন্য ইনলাইন সিএসএসের অনুমতি দেয়, যদিও রক্ষণাবেক্ষণের জন্য বাহ্যিক সিএসএস পছন্দ করা হয়।">The style attribute allows inline CSS for quick styling, though external CSS is preferred for maintainability.</p>
+  <pre id="inline-style-example">&lt;p style="color: red; font-size: 18px;"&gt;This text is red and larger.&lt;/p&gt;
+&lt;div style="background-color: #f0f0f0; padding: 10px;"&gt;A styled div.&lt;/div&gt;</pre>
+  <h3 data-en="9.2 Deprecated Tags" data-bn="৯.২ অপ্রচলিত ট্যাগ">9.2 Deprecated Tags</h3>
+  <p data-en="Some HTML tags are deprecated in HTML5 and should be replaced with CSS or semantic alternatives." data-bn="কিছু এইচটিএমএল ট্যাগ এইচটিএমএল৫-এ অপ্রচলিত এবং সিএসএস বা সিমান্টিক বিকল্প দিয়ে প্রতিস্থাপন করা উচিত।">Some HTML tags are deprecated in HTML5 and should be replaced with CSS or semantic alternatives.</p>
+  <table id="deprecated-table">
+    <tr>
+      <th data-en="Tag" data-bn="ট্যাগ">Tag</th>
+      <th data-en="Alternative" data-bn="বিকল্প">Alternative</th>
+    </tr>
+    <tr>
+      <td><code>&lt;font&gt;</code></td>
+      <td class="translatable" data-en="Use CSS &lt;code&gt;color&lt;/code&gt; and &lt;code&gt;font-family&lt;/code&gt;" data-bn="সিএসএস &lt;code&gt;color&lt;/code&gt; এবং &lt;code&gt;font-family&lt;/code&gt; ব্যবহার করুন">Use CSS <code>color</code> and <code>font-family</code></td>
+    </tr>
+    <tr>
+      <td><code>&lt;center&gt;</code></td>
+      <td class="translatable" data-en="Use CSS &lt;code&gt;text-align: center&lt;/code&gt;" data-bn="সিএসএস &lt;code&gt;text-align: center&lt;/code&gt; ব্যবহার করুন">Use CSS <code>text-align: center</code></td>
+    </tr>
+    <tr>
+      <td><code>&lt;u&gt;</code></td>
+      <td class="translatable" data-en="Use CSS &lt;code&gt;text-decoration: underline&lt;/code&gt;" data-bn="সিএসএস &lt;code&gt;text-decoration: underline&lt;/code&gt; ব্যবহার করুন">Use CSS <code>text-decoration: underline</code></td>
+    </tr>
+  </table>
+
+  <h2 id="chapter10" data-en="10. Best Practices and Resources" data-bn="১০. সর্বোত্তম অনুশীলন এবং সম্পদ">10. Best Practices and Resources</h2>
+  <h3 data-en="10.1 Best Practices" data-bn="১০.১ সর্বোত্তম অনুশীলন">10.1 Best Practices</h3>
+  <ul>
+    <li data-en="Close all tags properly." data-bn="সমস্ত ট্যাগ সঠিকভাবে বন্ধ করুন।">Close all tags properly.</li>
+    <li data-en="Use semantic tags for better structure." data-bn="ভালো গঠনের জন্য সিমান্টিক ট্যাগ ব্যবহার করুন।">Use semantic tags for better structure.</li>
+    <li data-en="Validate your code with the W3C Validator." data-bn="W3C ভ্যালিডেটর দিয়ে আপনার কোড যাচাই করুন।">Validate your code with the W3C Validator.</li>
+    <li data-en="Optimize images and media for faster loading." data-bn="দ্রুত লোডিংয়ের জন্য ছবি এবং মিডিয়া অপ্টিমাইজ করুন।">Optimize images and media for faster loading.</li>
+  </ul>
+  <h3 data-en="10.2 Learning Resources" data-bn="১০.২ শেখার সম্পদ">10.2 Learning Resources</h3>
+  <ul>
+    <li data-en="MDN Web Docs (developer.mozilla.org)" data-bn="MDN ওয়েব ডক্স (developer.mozilla.org)">MDN Web Docs (developer.mozilla.org)</li>
+    <li data-en="W3Schools (w3schools.com)" data-bn="W3Schools (w3schools.com)">W3Schools (w3schools.com)</li>
+    <li data-en="Practice by building a simple webpage." data-bn="একটি সাধারণ ওয়েবপেজ তৈরি করে অনুশীলন করুন।">Practice by building a simple webpage.</li>
+  </ul>
+
+  <div id="footer" data-en="© 2025 HTML Beginner's Guide" data-bn="© ২০২৫ এইচটিএমএল নতুনদের গাইড">© 2025 HTML Beginner's Guide</div>
+
+  <script>
+    let currentLang = 'en';
+
+    function toggleLanguage() {
+      try {
+        currentLang = currentLang === 'en' ? 'bn' : 'en';
+        const langToggleButton = document.getElementById('lang-toggle');
+        if (!langToggleButton) throw new Error("Language toggle button not found");
+        langToggleButton.textContent = currentLang === 'en' ? 'Switch to Bengali' : 'Switch to English';
+        langToggleButton.setAttribute('aria-label', currentLang === 'en' ? 'Switch to Bengali' : 'Switch to English');
+
+        // Update all elements with data-en and data-bn attributes
+        const translatableElements = document.querySelectorAll('[data-en], [data-bn]');
+        
+        translatableElements.forEach(element => {
+          if (element.hasAttribute(`data-${currentLang}`)) {
+            const text = element.getAttribute(`data-${currentLang}`);
+            if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+              element.value = text;
+            } else if (element.tagName === 'IMG') {
+              element.alt = text;
+            } else {
+              element.textContent = text;
+            }
+          }
+        });
+
+        // Special handling for code examples that might contain HTML tags
+        const codeExamples = document.querySelectorAll('pre, code');
+        codeExamples.forEach(code => {
+          if (code.textContent.includes('&lt;') || code.textContent.includes('&gt;')) {
+            code.innerHTML = code.innerHTML.replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+          }
+        });
+      } catch (error) {
+        console.error("Translation error:", error);
+      }
+    }
+
+    // Initialize with English
+    document.addEventListener('DOMContentLoaded', () => {
+      toggleLanguage();
+    });
+  </script>
+</body>
+</html>
