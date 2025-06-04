@@ -524,7 +524,6 @@
         langToggleButton.textContent = currentLang === 'en' ? 'Switch to Bengali' : 'Switch to English';
         langToggleButton.setAttribute('aria-label', currentLang === 'en' ? 'Switch to Bengali' : 'Switch to English');
 
-        // Update all elements with data-en and data-bn attributes
         const translatableElements = document.querySelectorAll('[data-en], [data-bn]');
         
         translatableElements.forEach(element => {
@@ -540,7 +539,6 @@
           }
         });
 
-        // Special handling for code examples that might contain HTML tags
         const codeExamples = document.querySelectorAll('pre, code');
         codeExamples.forEach(code => {
           if (code.textContent.includes('&lt;') || code.textContent.includes('&gt;')) {
@@ -551,8 +549,6 @@
         console.error("Translation error:", error);
       }
     }
-
-    // Initialize with English
     document.addEventListener('DOMContentLoaded', () => {
       toggleLanguage();
     });
