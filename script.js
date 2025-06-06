@@ -245,7 +245,7 @@ const shareVerse = () => {
       const arabic = verseBox.querySelector('.arabic').textContent;
       const translation = verseBox.querySelector('.translation').textContent;
       const reference = verseBox.querySelector('.verse-number').textContent;
-      const shareText = `Qur'an ${reference}:\n\n${arabic}\n\n${translation}\n\nShared from Trust in Allah Verses`;
+      const shareText = `Qur'an ${reference}:\n\n${arabic}\n\n"${translation}"\n\n────────────\nShared from Trust in Allah Verses\nDesigned by MrTusarRX\nhttps://mrtusarrx.github.io/About-html/content.html`;
 
       if (navigator.share) {
         navigator.share({
